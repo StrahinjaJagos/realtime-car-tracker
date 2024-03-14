@@ -1,13 +1,26 @@
-# realtime-car-tracker
+# Praćenje Lokacije Automobila u Stvarnom Vremenu
 
-## Installation
-To run this project first install all the python dependencies:
-```
+## Instalacija
+
+Prvo instalirajte sve pakete:
+``
 pip install -r requirements.txt
-```
+``
 
-## Run
-To start the app run the below line in the shell:
-```
+Pokrenite program za praćenje:
+``
+cd tracker
 python tracker.py
-```
+``
+
+## Pokretanje web servera
+
+Za pokretanje web servera pokrenite:
+``
+python -m http.server
+``
+
+Za proslijeđivanje web aplikacije na javni URL pomoću ngrok-a pokrenite:
+``
+ngrok http 8000
+``
