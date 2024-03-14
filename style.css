@@ -1,0 +1,12 @@
+body{
+    font-family: Poppins !important;
+}
+
+#map {
+    width: 100%;
+    height: 600px;
+}
+
+.navbar-nav .nav-item .nav-link{
+    font-size: 13pt !important;
+}

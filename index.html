@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realtime Car Location Tracker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+        <div class="container">
+            <div class="w-100">
+                <ul class="navbar-nav m-auto justify-content-center align-items-center">
+                    <li class="nav-item active">
+                        <a class="nav-link px-3" href="/">
+                            <h4 class="text-danger m-0">RTCLT</h4>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link px-3" href="/">Početna</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#about-project">O projektu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#about-me">O meni</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container py-5" style="max-width: 1500px !important;">
+
+        <h3 class="pb-2">Pratite realtime lokaciju <i class="fa-solid fa-location-dot text-danger"></i></h3>
+
+        <div id="map"></div>
+
+
+        <div id="about-project">
+            <h3 class="pb-2 pt-5">O projektu</h3>
+
+            <p>
+                Dobrodošli na web stranicu koja prikazuje lokaciju automobila u stvarnom vremenu! Ovaj projekt je
+                kreirao Strahinja Jagoš kao seminarski rad na Informatičkom fakultetu. Ako želite istražiti kod koji
+                stoji iza ove web stranice, možete pogledati repozitorij na GitHub linku ispod.
+                <br><br>
+                Lokacija automobila se prikazuje u stvarnom vremenu zahvaljujući Firebase-ovom Realtime Database-u.
+                Podaci o lokaciji ažuriraju se u stvarnom vremenu i automatski se prikazuju na web stranici,
+                omogućavajući vam da uvijek budete informirani o trenutnoj poziciji.
+                <br><br>
+                Ova aplikacija je hostovana na Raspberry Pi računaru, koji je opremljen GPS modulom. GPS modul prikuplja
+                podatke o lokaciji vozila, a zatim se ti podaci šalju na Firebase server putem interneta. Na taj način
+                osiguravamo pouzdano praćenje lokacije vozila u stvarnom vremenu.
+
+            </p>
+
+            <span>Github repozitorij: <a
+                    href="https://github.com/NENAD-BLAGOVCANIN/realtime-car-tracker">https://github.com/NENAD-BLAGOVCANIN/realtime-car-tracker</a></span>
+
+        </div>
+
+
+        <div id="about-me">
+            <h3 class="pb-2 pt-5">O meni</h3>
+
+            <p>
+                Ja sam Strahinja Jagoš, student Informatickog fakulteta koji je strastven u istraživanju i razvoju
+                softvera.
+                Kroz svoje akademske projekte i vanškolske aktivnosti, stekao sam širok spektar vještina u području
+                programiranja.
+                <br><br>
+                Moja strast prema tehnologiji me motiviše da neprestano učim i istražujem nove koncepte i alate kako bih
+                unaprijedio svoje vještine i doprinjeo razvoju inovativnih projekata. Kroz ovaj projekat, želim
+                podijeliti
+                svoje znanje i iskustvo s vama te vam pružiti uvid u mogućnosti koje pruža tehnologija praćenja lokacije
+                u
+                stvarnom vremenu.
+            </p>
+        </div>
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDyyVXJupA-30hluBGt-BQipTGg-hk5tE&callback=initMap"
+        async defer></script>
+
+    <script src="./assets/js/main.js"></script>
+
+
+    <script type="module">
+
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js';
+        import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBBY2mmx9YCMjThXTrYcjgpL3iVJfEGhbw",
+            authDomain: "realtime-car-geolocation.firebaseapp.com",
+            databaseURL: "https://realtime-car-geolocation-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "realtime-car-geolocation",
+            storageBucket: "realtime-car-geolocation.appspot.com",
+            messagingSenderId: "576137888126",
+            appId: "1:576137888126:web:e43da03893d9d33bbc332f"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        const locationRef = ref(database, 'location');
+
+        $(document).ready(function () {
+            function fetchLocation() {
+                onValue(locationRef, (snapshot) => {
+
+                    const location = snapshot.val();
+                    if (location) {
+                        const latitude = location.latitude;
+                        const longitude = location.longitude;
+                        updateMarker(latitude, longitude)
+                    } else {
+                        console.log("Location not available.");
+                    }
+                });
+
+
+                setTimeout(fetchLocation, 5000);
+            }
+
+            fetchLocation();
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

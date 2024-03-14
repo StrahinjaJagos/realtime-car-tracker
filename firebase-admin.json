@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "realtime-car-geolocation",
+  "private_key_id": "753486a7763c6f35c6d0880c46f33b5263043540",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDVQR67uywrz5iU\nzwEQnTGKL8XdRRMy34cWu89vsXA0YJgaexqXQKwI5KVqs0evHBFltQd0B2BMl9L1\nfaRJxY2WOKI09ciRLyW9jfahvBP2woYD59ho9yVC0w/d47YblJ6Mrf3ZszissQX9\ngTKteB77nx1aseo+JwezMAw7dS562QWKTz/692+EvMT3uG9Qs0cY90Cfr94rEYU3\nteaYRCzMgMX/EAwq4HB7oAELNARTUWVe0K+z0NDSHWowgmUfgcu4++QJlAY4tPhH\n/+CBaUMYp9TTbTSmiLB29Ag09WbuZiMw0eXVz2G1sEeGUEohCPd14WRMXt5lkl4g\nhaKukPwLAgMBAAECggEAAgTI7wbE2Keb8xphyAIZgAxsfAaW/LKVLoAyJ9S1NtLb\no9bRiKsZ9c0dby218tzhujsIFnV5IWsmIBTJuktVZqPIUX5/17zxkJxFUr2qkG2F\nEYiWN3jqHiT3DLlV9eHUXyfIxm9c1fr93mHMbQMALi1mRbyP5G0zrmkIH0c0H7g6\n6+QlzuZaT+kK2pPcGE77K01zHYsr7ba1T8C9sZXXIHwCxcyA6Xg3bwZT3pbCQW6u\nVN5RFiIB8YEmvrKjcA19/KUIziwalmNfhs3QzTnKgsQ9r42pjcrAzoaK6Kdi2nyP\nsyOXnjkK10WOaYIKCJwdr4piv+vwia5mLelXnPb7wQKBgQDsusQbzSB8wHrWSd8z\n0eFHDNdRJKfcGiL5TMi6eNhalLZQuefku0s1p8+gcVHPmorE4HH7qXH/ZqeWhWG3\nbMUCddRjWETLuyGUR7awl9tKRuL5tNd2Clh1NKcAYils3ugO6JXQyqQAz96vLXKw\n66Ls5GpZQP9m0zC6ShB37NBwQwKBgQDmnSbuuyysHVeB0Vs7+eVk5FVoT6TB9M4s\nMG0qODcZ4o0kbhd4/o/nvvcwv6CemHpTQjWTKEw8rJmk4pk79DhyZGm23GZqlk/K\nYg+AFjrX5EiPWvuf8gzPmYA8bIjR6L+YD4q5MoLklIopCvGsZO3boOtyoVUPOsnD\niuJ/yw5MmQKBgHPZUm9oiyWB7JtBu4FYjK6Akj6beao1ADiQYwseaIKrlC0dTWaa\nYcv4O5uA2VCHiLGgRSerXKZoTktTKubgy+jQUQftAn3RLjWqgrUZG6/V0O3ymh6i\nIXf6NF/zqeIlk9r355kuEeRz1b5Ut3PtXOYhQgo7zME9SPNhm32U3syRAoGBAKFI\nQxQvH1z34F1QF6hoasAW2IxtNuLW3OIWtCIU0qRtxxw1SoE6N1ZyPdqACksghFx6\nL5HNWxQL+iBQwa4mbNvD0hMrLQ1aNk9qKUEBSwH2C7EGhngkBkWiKwcXONDlICmu\npOxEoTpPkBiIKODSbW9uqXuvzRcrnDP/i8yoLEXxAoGAGHQTgQdfoh/RP7p3XDIk\nuy0JOR82qFUT1308aUI/14iqnSXCu0gT7Cn5GHUdBtSey4dDHGTMIs1jOpoS0R0u\nkgWHXtX6Y+gi6DjMwZJAUO1HdLKNEUR84AcmLAb9G3FJh8gYzWv4cDJLIXfcilBf\nOea4YPMw4PyF60Dnugncy0Y=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-rs307@realtime-car-geolocation.iam.gserviceaccount.com",
+  "client_id": "105794860670802647726",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-rs307%40realtime-car-geolocation.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
